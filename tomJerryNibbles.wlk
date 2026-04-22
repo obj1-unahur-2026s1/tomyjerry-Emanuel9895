@@ -48,6 +48,10 @@ object nibbles {
 object otroRaton{
   var agresividad = 30
 
+  method correDistancia(unaDistancia) {
+    agresividad = agresividad - unaDistancia
+  }
+  
   method estaEnojado(){
     return agresividad > 20
   }

@@ -44,15 +44,13 @@ describe "Tom y Jerry" {
   }
 
 
-
-
-
-  test "test 3" {
-    assert.that(true)
+  test "saber si otro raton esta enojado esta enojado" {
+    assert.that(otroRaton.estaEnojado())
   }
 
-  test "test 4" {
-    assert.notThat(false)
+  test "si corre 20 metros, saber si otro raton esta enojado esta enojado" {
+    otroRaton.correDistancia(20)
+    assert.notThat(otroRaton.estaEnojado())
   }
 
 }
