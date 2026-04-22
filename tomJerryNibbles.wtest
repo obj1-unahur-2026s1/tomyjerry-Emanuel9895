@@ -1,10 +1,51 @@
 import tomJerryNibbles.*
 
-describe "Grupo de test" {
+describe "Tom y Jerry" {
 
-  test "test 1" {
-    assert.equals(100, 50+50)
+  test "Al inicio, la velocidad máxima de Tom es 10" {
+    assert.equals(10, tom.velocidadMaxima())
   }
+  
+  test "Si come a Jerry, la velocidad máxima pasa a ser  15.2" {
+    tom.comioRaton(jerry)
+    assert.equals(15.2, tom.velocidadMaxima())
+  }
+
+ test "Si corre 24 metros, entonces su velocidad máxima pasa a ser 14" {
+    tom.comioRaton(jerry)
+    tom.corrioDistancia(24)
+    assert.equals(14, tom.velocidadMaxima())
+  }
+
+   test "Si come a Nibbles, pasa a tener de velocidad máxima 18.7" {
+    tom.comioRaton(jerry)
+    tom.corrioDistancia(24)
+    tom.comioRaton(nibbles)
+    assert.equals(18.7, tom.velocidadMaxima())
+  }
+
+  test "si Jerry cumple años (3 años de edad), y luego Tom lo vuelve a comer, pasaría a tener 25.9" {
+    tom.comioRaton(jerry)
+    tom.corrioDistancia(24)
+    tom.comioRaton(nibbles)
+    jerry.cumplirAnios()
+    tom.comioRaton(jerry)
+    assert.equals(25.9, tom.velocidadMaxima())
+  }
+
+  test "si Jerry cumple años (3 años de edad), y luego Tom lo vuelve a comer, pasaría a tener 25.9" {
+    tom.comioRaton(jerry)
+    tom.corrioDistancia(24)
+    tom.comioRaton(nibbles)
+    jerry.cumplirAnios()
+    tom.comioRaton(jerry)
+    tom.corrioDistancia(38)
+    assert.equals(24, tom.velocidadMaxima())
+  }
+
+
+
+
 
   test "test 3" {
     assert.that(true)
