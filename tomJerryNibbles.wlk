@@ -12,6 +12,17 @@ method corrioDistancia(unaDistancia) {
 method velocidadMaxima() {
   return 5 + energia / 10
 }
+
+method puedeCazar(unaDistancia){
+  return unaDistancia / 2 < energia
+}
+
+method cazarRatonAdistanciaDada(unRaton,unaDistancia) {
+  if (self.puedeCazar(unaDistancia)){
+    self.corrioDistancia(unaDistancia)
+    self.comioRaton(unRaton)
+  }
+}
 }
 
 object jerry {
@@ -34,3 +45,13 @@ object nibbles {
 }
 
 // Inventar otro ratón
+object otroRaton{
+  var agresividad = 30
+
+  method estaEnojado(){
+    return agresividad > 20
+  }
+  method peso() {
+    return agresividad * 10
+  }
+}
